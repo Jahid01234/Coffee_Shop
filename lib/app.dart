@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Coffee Shop Ui',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.home,
       getPages: AppRoutes.routes,
     );
   }
