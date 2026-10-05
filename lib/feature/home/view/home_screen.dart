@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         body: Column(
           children: [
-            SizedBox(height: getHeight(80)),
             HomeHeaderSection(),
             SizedBox(height: getHeight(20)),
           ],
