@@ -1,4 +1,5 @@
 import 'package:coffee_shop_app/core/const/app_colors.dart';
+import 'package:coffee_shop_app/feature/home/controller/home_controller.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/category_selector.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/demo_clipper.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/page_indicator.dart';
@@ -7,7 +8,14 @@ import 'package:coffee_shop_app/feature/home/view/widgets/product_pager.dart';
 import 'package:flutter/material.dart';
 
 class GreenDomeSection extends StatelessWidget {
-  const GreenDomeSection({super.key});
+  final HomeController controller;
+
+  const GreenDomeSection({
+    super.key,
+    required this.controller,
+  });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +24,11 @@ class GreenDomeSection extends StatelessWidget {
       child: Container(
         width: double.infinity,
         color: AppColors.primaryColor,
-        child: const Column(
+        child:  Column(
           children: [
             SizedBox(height: 10),
-            CategorySelector(),
+            CategorySelector(controller: controller),
+            SizedBox(height: 10),
             Expanded(child: ProductPager()),
             ProductInfo(),
             SizedBox(height: 18),

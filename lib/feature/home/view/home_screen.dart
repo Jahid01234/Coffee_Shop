@@ -8,23 +8,26 @@ import 'package:get/get.dart';
 
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
+
+   final controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeController());
     return Scaffold(
       appBar: const HomeHeaderSection(),
       body: Stack(
         children: [
           BackgroundWidget(),
           SubtitleWidget(),
-          const Positioned(
+          Positioned(
             top: 120,
             left: 0,
             right: 0,
             bottom: 0,
-            child: GreenDomeSection(),
+            child: GreenDomeSection(
+              controller: controller
+            ),
           ),
         ],
       ),

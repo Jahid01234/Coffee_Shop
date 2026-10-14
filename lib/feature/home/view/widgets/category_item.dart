@@ -1,13 +1,20 @@
+import 'package:coffee_shop_app/core/style/global_text_style.dart';
 import 'package:coffee_shop_app/feature/home/controller/home_controller.dart';
 import 'package:coffee_shop_app/feature/home/model/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CategoryItem extends GetView<HomeController> {
+class CategoryItem extends StatelessWidget {
+  final HomeController controller;
   final CategoryModel category;
   final int index;
 
-  const CategoryItem({super.key, required this.category, required this.index});
+  const CategoryItem({
+    super.key,
+    required this.controller,
+    required this.category,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,9 @@ class CategoryItem extends GetView<HomeController> {
                 shape: BoxShape.circle,
                 color: Colors.white,
                 border: Border.all(
-                  color: selected ? Colors.amber : Colors.transparent,
+                  color: selected
+                         ? Colors.amber
+                         : Colors.transparent,
                   width: 3,
                 ),
               ),
@@ -41,14 +50,13 @@ class CategoryItem extends GetView<HomeController> {
               ),
             );
           }),
-          const SizedBox(height: 6),
+          const SizedBox(height: 4),
           Text(
-            category.name.toUpperCase(),
-            style: const TextStyle(
+            category.name,
+            style: globalTextStyle(
+              fontSize: 12,
               color: Colors.white,
-              fontSize: 10,
               fontWeight: FontWeight.w600,
-              letterSpacing: 0.5,
             ),
           ),
         ],
