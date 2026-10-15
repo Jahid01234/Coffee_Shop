@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Green section er upore curved (dome) shape
+
 class DomeClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

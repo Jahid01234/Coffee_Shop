@@ -37,7 +37,7 @@ class CategoryItem extends StatelessWidget {
                   color: selected
                          ? Colors.amber
                          : Colors.transparent,
-                  width: 3,
+                  width: 2,
                 ),
               ),
               child: Image.asset(
@@ -64,3 +64,4 @@ class CategoryItem extends StatelessWidget {
     );
   }
 }
+

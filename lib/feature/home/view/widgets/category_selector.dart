@@ -11,7 +11,7 @@ class CategorySelector extends StatelessWidget {
     required this.controller,
   });
 
-  static const _offsets = <double>[75, 35, 40, 75];
+  static const _offsets = <double>[70, 35, 35, 70];
 
   @override
   Widget build(BuildContext context) {
