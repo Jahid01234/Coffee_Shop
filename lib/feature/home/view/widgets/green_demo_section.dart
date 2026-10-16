@@ -4,7 +4,6 @@ import 'package:coffee_shop_app/feature/home/view/widgets/category_selector.dart
 import 'package:coffee_shop_app/feature/home/view/widgets/demo_clipper.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/demo_indicator_painter.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/page_indicator.dart';
-import 'package:coffee_shop_app/feature/home/view/widgets/product_infp.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/product_pager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,14 +26,13 @@ class GreenDomeSection extends StatelessWidget {
           clipper: DomeClipper(),
           child: Container(
             width: double.infinity,
-            color: AppColors.primaryColor,
+            color: AppColors.secondaryColor,
             child: Column(
               children: [
                 const SizedBox(height: 10),
                 CategorySelector(controller: controller),
-                const SizedBox(height: 10),
+                const SizedBox(height: 60),
                 const Expanded(child: ProductPager()),
-                const ProductInfo(),
                 const SizedBox(height: 18),
                 const PageIndicator(),
                 const SizedBox(height: 20),

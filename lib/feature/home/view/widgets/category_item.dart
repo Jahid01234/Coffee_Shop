@@ -52,11 +52,11 @@ class CategoryItem extends StatelessWidget {
           }),
           const SizedBox(height: 4),
           Text(
-            category.name,
+            category.name.toUpperCase(),
             style: globalTextStyle(
               fontSize: 12,
               color: Colors.white,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

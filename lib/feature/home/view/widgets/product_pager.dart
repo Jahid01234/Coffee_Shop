@@ -12,7 +12,6 @@ class ProductPager extends GetView<HomeController> {
 
     return Obx(() {
       final items = controller.filteredProducts;
-
       return PageView.builder(
         controller: pc,
         clipBehavior: Clip.none,
