@@ -18,11 +18,11 @@ final List<CategoryModel> categories = [
     image: ImagesPath.hotCoffee,
   ),
   CategoryModel(
-    name: 'Drinks',
+    name: 'Drink',
     image: ImagesPath.drink,
   ),
   CategoryModel(
-    name: 'Hot Teas',
+    name: 'Hot Tea',
     image: ImagesPath.hotTea,
   ),
   CategoryModel(

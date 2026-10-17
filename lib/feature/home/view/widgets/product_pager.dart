@@ -25,11 +25,17 @@ class ProductPager extends GetView<HomeController> {
               if (pc.hasClients && pc.position.haveDimensions) {
                 page = pc.page ?? page;
               }
+
               final diff = (page - index).abs().clamp(0.0, 1.0);
-              final scale = 1 - (0.35 * diff);
-              return Transform.scale(
-                scale: scale,
-                child: Opacity(opacity: 1 - (0.3 * diff), child: child),
+              final scale = 1 - (0.1 * diff);
+              final offsetY = 70 * Curves.easeOut.transform(diff);
+
+              return Transform.translate(
+                offset: Offset(0, offsetY),
+                child: Transform.scale(
+                  scale: scale,
+                  child: Opacity(opacity: 1 - (0.3 * diff), child: child),
+                ),
               );
             },
             child: ProductCard(product: items[index]),

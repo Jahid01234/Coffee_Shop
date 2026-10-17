@@ -1,7 +1,7 @@
 import 'package:coffee_shop_app/core/const/app_colors.dart';
 import 'package:coffee_shop_app/feature/home/model/product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_shop_app/core/style/global_text_style.dart';
+
 
 
 class ProductCard extends StatelessWidget {
@@ -58,31 +58,6 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-
-        const SizedBox(height: 12),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(
-            product.name,
-            textAlign: TextAlign.center,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: globalTextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          '\$${product.price.toStringAsFixed(2)}',
-          style: globalTextStyle(
-            color: AppColors.amberColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
           ),
         ),
       ],
