@@ -1,10 +1,16 @@
+import 'package:coffee_shop_app/core/routes/app_routes.dart';
 import 'package:coffee_shop_app/feature/home/controller/home_controller.dart';
 import 'package:coffee_shop_app/feature/home/view/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProductPager extends GetView<HomeController> {
-  const ProductPager({super.key});
+class ProductPager extends StatelessWidget {
+  final HomeController controller;
+
+  const ProductPager({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,13 @@ class ProductPager extends GetView<HomeController> {
                 ),
               );
             },
-            child: ProductCard(product: items[index]),
+            child: ProductCard(
+                product: items[index],
+                onTap: () => Get.toNamed(
+                    AppRoutes.productDetails,
+                    arguments: items[index],
+                ),
+            ),
           );
         },
       );

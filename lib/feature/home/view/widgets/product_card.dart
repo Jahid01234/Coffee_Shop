@@ -21,7 +21,7 @@ class ProductCard extends StatelessWidget {
       children: [
         // Product Image
         GestureDetector(
-          onTap: ()=> onTap,
+          onTap: onTap,
           child: SizedBox(
             height: 180,
             width: 190,

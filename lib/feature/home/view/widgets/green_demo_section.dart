@@ -33,7 +33,7 @@ class GreenDomeSection extends StatelessWidget {
                 const SizedBox(height: 10),
                 CategorySelector(controller: controller),
                 const SizedBox(height: 20),
-                const Expanded(child: ProductPager()),
+                Expanded(child: ProductPager(controller: controller)),
                 const ProductInfo(),
                 const SizedBox(height: 18),
                 const PageIndicator(),
