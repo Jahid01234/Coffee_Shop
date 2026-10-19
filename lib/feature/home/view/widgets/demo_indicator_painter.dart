@@ -61,4 +61,3 @@ class DomeIndicatorPainter extends CustomPainter {
           old.itemCount != itemCount ||
           old.color != color;
 }
-

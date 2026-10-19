@@ -9,6 +9,7 @@ import 'package:coffee_shop_app/feature/home/view/widgets/product_pager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 class GreenDomeSection extends StatelessWidget {
   final HomeController controller;
   final int categoryCount;
@@ -19,25 +20,49 @@ class GreenDomeSection extends StatelessWidget {
     this.categoryCount = 4,
   });
 
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         ClipPath(
           clipper: DomeClipper(),
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
-            color: AppColors.secondaryColor,
-            child: Column(
+            child: Stack(
               children: [
-                const SizedBox(height: 10),
-                CategorySelector(controller: controller),
-                const SizedBox(height: 20),
-                Expanded(child: ProductPager(controller: controller)),
-                const ProductInfo(),
-                const SizedBox(height: 18),
-                const PageIndicator(),
-                const SizedBox(height: 20),
+                Positioned.fill(
+                  child: Container(color: AppColors.primaryColor),
+                ),
+                Positioned(
+                  top: 170,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: ClipPath(
+                    clipper: DomeClipper(),
+                    child: Container(
+                      color: AppColors.secondaryColor,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 60),
+                          Expanded(child: ProductPager(controller: controller)),
+                          const ProductInfo(),
+                          const SizedBox(height: 18),
+                          const PageIndicator(),
+                          const SizedBox(height: 20),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                Positioned(
+                  top: 10,
+                  left: 0,
+                  right: 0,
+                  child: CategorySelector(controller: controller),
+                ),
               ],
             ),
           ),

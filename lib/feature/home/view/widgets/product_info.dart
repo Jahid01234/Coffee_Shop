@@ -36,7 +36,7 @@ class ProductInfo extends GetView<HomeController> {
             Text(
               '\$${product.price.toStringAsFixed(2)}',
               style: globalTextStyle(
-                color: AppColors.amberColor,
+                color: AppColors.whiteColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
