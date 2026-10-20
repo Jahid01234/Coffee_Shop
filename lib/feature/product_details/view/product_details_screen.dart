@@ -1,4 +1,5 @@
 import 'package:coffee_shop_app/feature/home/model/product_model.dart';
+import 'package:coffee_shop_app/feature/product_details/view/widget/product_header_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,12 +11,7 @@ class ProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: Get.back,
-        ),
-      ),
+      appBar: ProductHeaderSection(),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
