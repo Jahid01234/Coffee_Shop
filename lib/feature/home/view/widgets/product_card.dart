@@ -3,7 +3,6 @@ import 'package:coffee_shop_app/feature/home/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 
-
 class ProductCard extends StatelessWidget {
   final ProductModel product;
   final VoidCallback? onTap;
@@ -19,7 +18,6 @@ class ProductCard extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Product Image
         GestureDetector(
           onTap: onTap,
           child: SizedBox(
