@@ -24,6 +24,8 @@ class ProductDetailsScreen extends StatelessWidget {
             SizedBox(height: 15),
             ProductTitlePriceSection(product: product),
             SizedBox(height: 15),
+
+
           ],
         ),
       ),
