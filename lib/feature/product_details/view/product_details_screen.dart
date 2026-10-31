@@ -1,7 +1,11 @@
+import 'package:coffee_shop_app/core/const/app_colors.dart';
+import 'package:coffee_shop_app/core/style/global_text_style.dart';
 import 'package:coffee_shop_app/feature/home/model/product_model.dart';
+import 'package:coffee_shop_app/feature/product_details/controller/product_details_controller.dart';
 import 'package:coffee_shop_app/feature/product_details/view/widget/product_header_section.dart';
 import 'package:coffee_shop_app/feature/product_details/view/widget/product_image_section.dart';
 import 'package:coffee_shop_app/feature/product_details/view/widget/product_title_price_section.dart';
+import 'package:coffee_shop_app/feature/product_details/view/widget/size_option_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +13,7 @@ class ProductDetailsScreen extends StatelessWidget {
   ProductDetailsScreen({super.key});
 
   final ProductModel product = Get.arguments as ProductModel;
+  final ProductDetailsController controller = Get.put(ProductDetailsController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +29,19 @@ class ProductDetailsScreen extends StatelessWidget {
             SizedBox(height: 15),
             ProductTitlePriceSection(product: product),
             SizedBox(height: 15),
-
-
+            Text(
+              'Size Options',
+              style: globalTextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: AppColors.blackColor,
+              ),
+            ),
+            SizedBox(height: 10),
+            SizeOptionCard(
+              sizes: product.sizes,
+              selectedIndex: controller.selectedSizeIndex,
+            ),
           ],
         ),
       ),

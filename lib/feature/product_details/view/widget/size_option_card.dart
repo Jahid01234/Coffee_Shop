@@ -1,0 +1,94 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:coffee_shop_app/feature/home/model/size_option_model.dart';
+
+class SizeOptionCard extends StatelessWidget {
+  final List<SizeOptionModel> sizes;
+  final RxInt selectedIndex;
+
+  const SizeOptionCard({
+    super.key,
+    required this.sizes,
+    required this.selectedIndex,
+  });
+
+  static const Color selectedColor = Color(0xFF35966D);
+  static const Color unselectedColor = Color(0xFFEDF5F1);
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      return Row(
+        children: List.generate(sizes.length, (index) {
+          final size = sizes[index];
+          final isSelected = selectedIndex.value == index;
+
+          return Expanded(
+            child: GestureDetector(
+              onTap: () {
+                selectedIndex.value = index;
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Cup Icon Circle
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    width: 85,
+                    height: 85,
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? selectedColor
+                          : unselectedColor,
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        isSelected ? Colors.white : selectedColor,
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset(
+                        size.image,
+                        width: 35,
+                        height: 35,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  // Size Name
+                  Text(
+                    size.name,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: isSelected
+                          ? Colors.black
+                          : Colors.black87,
+                    ),
+                  ),
+
+                  const SizedBox(height: 3),
+
+                  // Quantity
+                  Text(
+                    size.quantity,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: isSelected
+                          ? Colors.grey.shade600
+                          : Colors.grey.shade400,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }),
+      );
+    });
+  }
+}
