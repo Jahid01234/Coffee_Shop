@@ -34,7 +34,7 @@ class ProductDetailsScreen extends StatelessWidget {
               style: globalTextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: AppColors.blackColor,
+                color: AppColors.greyColor,
               ),
             ),
             SizedBox(height: 10),

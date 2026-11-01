@@ -1,3 +1,4 @@
+import 'package:coffee_shop_app/core/style/global_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:coffee_shop_app/feature/home/model/size_option_model.dart';
@@ -32,10 +33,11 @@ class SizeOptionCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Cup Icon Circle
+                  // Cup Icon Circle
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    width: 85,
-                    height: 85,
+                    width: 65,
+                    height: 65,
                     decoration: BoxDecoration(
                       color: isSelected
                           ? selectedColor
@@ -43,17 +45,13 @@ class SizeOptionCard extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     alignment: Alignment.center,
-                    child: ColorFiltered(
-                      colorFilter: ColorFilter.mode(
-                        isSelected ? Colors.white : selectedColor,
-                        BlendMode.srcIn,
-                      ),
-                      child: Image.asset(
-                        size.image,
-                        width: 35,
-                        height: 35,
-                        fit: BoxFit.contain,
-                      ),
+                    child: Image.asset(
+                      size.image,
+                      width: 35,
+                      height: 35,
+                      fit: BoxFit.contain,
+                      color: isSelected ? Colors.white : selectedColor,
+                      colorBlendMode: BlendMode.srcIn,
                     ),
                   ),
 
@@ -62,8 +60,8 @@ class SizeOptionCard extends StatelessWidget {
                   // Size Name
                   Text(
                     size.name,
-                    style: TextStyle(
-                      fontSize: 17,
+                    style: globalTextStyle(
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: isSelected
                           ? Colors.black
@@ -76,8 +74,8 @@ class SizeOptionCard extends StatelessWidget {
                   // Quantity
                   Text(
                     size.quantity,
-                    style: TextStyle(
-                      fontSize: 13,
+                    style: globalTextStyle(
+                      fontSize: 12,
                       color: isSelected
                           ? Colors.grey.shade600
                           : Colors.grey.shade400,
