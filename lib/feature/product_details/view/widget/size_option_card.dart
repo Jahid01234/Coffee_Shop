@@ -33,7 +33,6 @@ class SizeOptionCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Cup Icon Circle
-                  // Cup Icon Circle
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
                     width: 65,
