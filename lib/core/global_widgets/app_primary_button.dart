@@ -3,7 +3,6 @@ import 'package:coffee_shop_app/core/const/app_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class AppPrimaryButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
@@ -52,40 +51,40 @@ class AppPrimaryButton extends StatelessWidget {
           ),
           child: isLoading
               ? SizedBox(
-            width: getWidth(24),
-            height: getWidth(24),
-            child: CircularProgressIndicator(
-              color: AppColors.whiteColor,
-              strokeWidth: 2.5,
-            ),
-          )
+                  width: getWidth(24),
+                  height: getWidth(24),
+                  child: CircularProgressIndicator(
+                    color: AppColors.whiteColor,
+                    strokeWidth: 2.5,
+                  ),
+                )
               : Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: Text(
-                  text,
-                  style: GoogleFonts.poppins(
-                    fontSize: fontSize ?? 16,
-                    fontWeight: fontWeight ?? FontWeight.w600,
-                    color: textColor ?? AppColors.whiteColor,
-                  ),
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Text(
+                        text,
+                        style: GoogleFonts.poppins(
+                          fontSize: fontSize ?? 16,
+                          fontWeight: fontWeight ?? FontWeight.w600,
+                          color: textColor ?? AppColors.whiteColor,
+                        ),
+                      ),
+                    ),
+                    if (icon != null) ...[
+                      const SizedBox(width: 5),
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: AppColors.blackColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(child: icon),
+                      ),
+                    ],
+                  ],
                 ),
-              ),
-              if (icon != null) ...[
-                const SizedBox(width: 5),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: AppColors.blackColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(child: icon),
-                ),
-              ],
-            ],
-          ),
         ),
       ),
     );

@@ -24,11 +24,11 @@ class ProductDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             ProductImageSection(product: product),
-            SizedBox(height: 15),
+            SizedBox(height: 30),
             ProductTitlePriceSection(product: product),
-            SizedBox(height: 15),
+            SizedBox(height: 30),
             Text(
               'Size Options',
               style: globalTextStyle(
@@ -42,6 +42,8 @@ class ProductDetailsScreen extends StatelessWidget {
               sizes: product.sizes,
               selectedIndex: controller.selectedSizeIndex,
             ),
+            SizedBox(height: 30),
+
           ],
         ),
       ),

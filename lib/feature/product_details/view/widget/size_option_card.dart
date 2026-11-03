@@ -35,8 +35,8 @@ class SizeOptionCard extends StatelessWidget {
                   // Cup Icon Circle
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    width: 65,
-                    height: 65,
+                    width: 60,
+                    height: 60,
                     decoration: BoxDecoration(
                       color: isSelected
                           ? selectedColor
@@ -61,7 +61,7 @@ class SizeOptionCard extends StatelessWidget {
                     size.name,
                     style: globalTextStyle(
                       fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       color: isSelected
                           ? Colors.black
                           : Colors.black87,
