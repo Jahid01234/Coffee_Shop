@@ -2,6 +2,7 @@ import 'package:coffee_shop_app/core/global_widgets/app_primary_button.dart';
 import 'package:coffee_shop_app/core/style/global_text_style.dart';
 import 'package:coffee_shop_app/feature/product_details/controller/product_details_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class IncrementDecrementButton extends StatelessWidget {
   final ProductDetailsController controller;
@@ -15,16 +16,32 @@ class IncrementDecrementButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        AppPrimaryButton(text: "-", onTap: (){}),
-        Text(
-          "1",
-          style: globalTextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500
+        AppPrimaryButton(
+            height: 50,
+            width: 50,
+            radius: 100,
+            text: "-",
+            fontSize: 20,
+            onTap:  controller.decrementFunction,
+        ),
+        SizedBox(width: 20),
+        Obx(()=>Text(
+            controller.initialValue.value.toString(),
+            style: globalTextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+            ),
           ),
         ),
-
-        AppPrimaryButton(text: "+", onTap: (){})
+        SizedBox(width: 20),
+        AppPrimaryButton(
+            height: 50,
+            width: 50,
+            radius: 100,
+            text: "+",
+            fontSize: 20,
+            onTap:  controller.incrementFunction
+        ),
       ],
     );
   }
