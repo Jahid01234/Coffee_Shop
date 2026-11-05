@@ -28,8 +28,8 @@ class IncrementDecrementButton extends StatelessWidget {
         Obx(()=>Text(
             controller.initialValue.value.toString(),
             style: globalTextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
             ),
           ),
         ),

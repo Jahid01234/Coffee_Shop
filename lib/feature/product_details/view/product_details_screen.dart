@@ -1,4 +1,5 @@
 import 'package:coffee_shop_app/core/const/app_colors.dart';
+import 'package:coffee_shop_app/core/global_widgets/app_primary_button.dart';
 import 'package:coffee_shop_app/core/style/global_text_style.dart';
 import 'package:coffee_shop_app/feature/home/model/product_model.dart';
 import 'package:coffee_shop_app/feature/product_details/controller/product_details_controller.dart';
@@ -25,9 +26,9 @@ class ProductDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             ProductImageSection(product: product),
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             ProductTitlePriceSection(product: product),
             SizedBox(height: 30),
             Text(
@@ -44,7 +45,17 @@ class ProductDetailsScreen extends StatelessWidget {
               selectedIndex: controller.selectedSizeIndex,
             ),
             SizedBox(height: 60),
-            IncrementDecrementButton(controller: controller)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IncrementDecrementButton(controller: controller),
+                AppPrimaryButton(
+                  width: 150,
+                  text: "Add to Order",
+                  onTap:  controller.decrementFunction,
+                ),
+              ],
+            ),
           ],
         ),
       ),
