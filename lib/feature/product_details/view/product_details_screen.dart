@@ -52,7 +52,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 AppPrimaryButton(
                   width: 150,
                   text: "Add to Order",
-                  onTap:  controller.decrementFunction,
+                  onTap:  (){},
                 ),
               ],
             ),
